@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/enterPhone">
+
+    <fragment
+        android:id="@+id/enterPhone"
+        android:name="com.android.pooyeshclean.presentation.ui.authentication.login.enterphone.EnterPhoneFragment"
+        android:label="navigation_enter_phone_fragment"
+        tools:layout="@layout/fragment_enter_phone" >
+        <action
+            android:id="@+id/enter_phone_to_verify"
+            app:destination="@id/verify"
+            app:enterAnim="@anim/nav_default_enter_anim"  />
+        <argument
+            android:name="token"
+            app:argType="string"
+            android:defaultValue='""' />
+    </fragment>
+    <fragment
+        android:id="@+id/verify"
+        android:name="com.android.pooyeshclean.presentation.ui.authentication.login.verification.VerificationFragment"
+        android:label="navigation_verify_fragment"
+        tools:layout="@layout/fragment_verification" >
+        <argument
+            android:name="token"
+            app:argType="string"
+            android:defaultValue='""' />
+    </fragment>
+</navigation>
